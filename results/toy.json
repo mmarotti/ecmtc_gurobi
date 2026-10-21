@@ -1,0 +1,41 @@
+{
+  "instance": "instances/toy.json",
+  "T": 6,
+  "D": 15.0,
+  "status": "optimal",
+  "total_energy": 9.98,
+  "makespan": 15.0,
+  "num_selected": 2,
+  "assignment": [
+    {
+      "id": 1,
+      "tasks": 0,
+      "time": 0,
+      "energy": 0,
+      "selected": false
+    },
+    {
+      "id": 2,
+      "tasks": 3,
+      "time": 9.0,
+      "energy": 7.6,
+      "selected": true
+    },
+    {
+      "id": 3,
+      "tasks": 3,
+      "time": 15.0,
+      "energy": 2.38,
+      "selected": true
+    }
+  ],
+  "solver_objectives": {
+    "energy": 9.98,
+    "makespan": 15.0
+  },
+  "solver_status": "OPTIMAL",
+  "time_s": 0.007704999999987194,
+  "nodes": 1.0,
+  "num_binaries": 21,
+  "num_constraints": 8
+}
