@@ -1,0 +1,513 @@
+{
+  "instance": "ES2 linear, 100 resources, T = 2000, D = inf (Table VI)",
+  "T": 2000,
+  "D": null,
+  "method": "dynamic_programming",
+  "status": "optimal",
+  "total_energy": 837.2977418950034,
+  "makespan": 2039.065501880901,
+  "num_selected": 2,
+  "assignment": [
+    {
+      "id": 0,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 1,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 2,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 3,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 4,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 5,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 6,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 7,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 8,
+      "tasks": 1,
+      "selected": true
+    },
+    {
+      "id": 9,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 10,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 11,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 12,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 13,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 14,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 15,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 16,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 17,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 18,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 19,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 20,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 21,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 22,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 23,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 24,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 25,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 26,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 27,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 28,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 29,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 30,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 31,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 32,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 33,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 34,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 35,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 36,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 37,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 38,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 39,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 40,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 41,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 42,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 43,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 44,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 45,
+      "tasks": 1999,
+      "selected": true
+    },
+    {
+      "id": 46,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 47,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 48,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 49,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 50,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 51,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 52,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 53,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 54,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 55,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 56,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 57,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 58,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 59,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 60,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 61,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 62,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 63,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 64,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 65,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 66,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 67,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 68,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 69,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 70,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 71,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 72,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 73,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 74,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 75,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 76,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 77,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 78,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 79,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 80,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 81,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 82,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 83,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 84,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 85,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 86,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 87,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 88,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 89,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 90,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 91,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 92,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 93,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 94,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 95,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 96,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 97,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 98,
+      "tasks": 0,
+      "selected": false
+    },
+    {
+      "id": 99,
+      "tasks": 0,
+      "selected": false
+    }
+  ],
+  "solve_time_s": 128.53930905499874
+}

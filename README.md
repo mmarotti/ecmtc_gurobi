@@ -11,8 +11,8 @@ Requer licença do Gurobi instalada (ex.: acadêmica).
 ## Uso
 
 ```bash
-python ecmtc_gurobi.py paper_example.json
-python ecmtc_gurobi.py paper_example.json -o result.json --verbose
+python ecmtc_milp.py example.json
+python ecmtc_milp.py example.json -o result.json --verbose
 ```
 
 Opções: `--eps` (degradação relativa permitida na energia, padrão 1e-9), `--time-limit`,

@@ -1,6 +1,5 @@
 import argparse
 import json
-import math
 import sys
 import time
 from pathlib import Path
@@ -30,9 +29,7 @@ def read_instance(path: str) -> dict:
 # ---------------------------------------------------------------------------
 
 def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, log_file=None):
-    # Criação do modelo e parâmetros (inclui a verificação da licença; fora do tempo de montagem)
     m = gp.Model("ECMTC")
-    # log no console só com --verbose; no arquivo sempre que log_file for informado
     m.Params.OutputFlag = 1 if (verbose or log_file) else 0
     m.Params.LogToConsole = 1 if verbose else 0
     if log_file:
