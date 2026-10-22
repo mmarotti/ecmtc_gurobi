@@ -1,5 +1,5 @@
 {
-  "instance": "instances/toy.json",
+  "instance": "Exemplo do artigo (Fig. 2): 3 clientes, 6 tarefas, D = 15 s",
   "T": 6,
   "D": 15.0,
   "status": "optimal",
@@ -34,7 +34,9 @@
     "makespan": 15.0
   },
   "solver_status": "OPTIMAL",
-  "time_s": 0.007704999999987194,
+  "build_time_s": 0.0002817210006469395,
+  "solve_time_s": 0.0023204539975267835,
+  "gurobi_runtime_s": 0.002254962921142578,
   "nodes": 1.0,
   "num_binaries": 21,
   "num_constraints": 8

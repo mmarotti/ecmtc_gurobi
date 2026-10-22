@@ -1,0 +1,722 @@
+{
+  "instance": "ES1 n·log(n), 100 resources, T = 5000, D = inf",
+  "T": 5000,
+  "D": null,
+  "status": "optimal",
+  "total_energy": 12787.259575970242,
+  "makespan": 24178.31968964207,
+  "num_selected": 100,
+  "assignment": [
+    {
+      "id": 0,
+      "tasks": 5,
+      "time": 37.29413599808397,
+      "energy": 11.934123519386874,
+      "selected": true
+    },
+    {
+      "id": 1,
+      "tasks": 1,
+      "time": 9.90074448975335,
+      "energy": 3.168238236721072,
+      "selected": true
+    },
+    {
+      "id": 2,
+      "tasks": 1,
+      "time": 11.28930719673436,
+      "energy": 3.6125783029549954,
+      "selected": true
+    },
+    {
+      "id": 3,
+      "tasks": 13,
+      "time": 92.98914200666636,
+      "energy": 29.756525442133235,
+      "selected": true
+    },
+    {
+      "id": 4,
+      "tasks": 7,
+      "time": 46.7955609197996,
+      "energy": 14.97457949433587,
+      "selected": true
+    },
+    {
+      "id": 5,
+      "tasks": 4,
+      "time": 27.514687126241277,
+      "energy": 8.804699880397209,
+      "selected": true
+    },
+    {
+      "id": 6,
+      "tasks": 1,
+      "time": 7.723505178820671,
+      "energy": 2.471521657222614,
+      "selected": true
+    },
+    {
+      "id": 7,
+      "tasks": 1,
+      "time": 7.8660599511275064,
+      "energy": 2.5171391843608024,
+      "selected": true
+    },
+    {
+      "id": 8,
+      "tasks": 402,
+      "time": 3161.029191718448,
+      "energy": 1011.5293413499036,
+      "selected": true
+    },
+    {
+      "id": 9,
+      "tasks": 2,
+      "time": 18.418336748494788,
+      "energy": 5.893867759518333,
+      "selected": true
+    },
+    {
+      "id": 10,
+      "tasks": 1,
+      "time": 6.845335363742523,
+      "energy": 2.190507316397607,
+      "selected": true
+    },
+    {
+      "id": 11,
+      "tasks": 14,
+      "time": 102.11125656024576,
+      "energy": 32.67560209927864,
+      "selected": true
+    },
+    {
+      "id": 12,
+      "tasks": 1,
+      "time": 9.063089418409506,
+      "energy": 2.900188613891042,
+      "selected": true
+    },
+    {
+      "id": 13,
+      "tasks": 90,
+      "time": 684.6739136578541,
+      "energy": 219.09565237051336,
+      "selected": true
+    },
+    {
+      "id": 14,
+      "tasks": 1,
+      "time": 8.477349962871656,
+      "energy": 2.71275198811893,
+      "selected": true
+    },
+    {
+      "id": 15,
+      "tasks": 1,
+      "time": 7.842112818555074,
+      "energy": 2.509476101937624,
+      "selected": true
+    },
+    {
+      "id": 16,
+      "tasks": 3,
+      "time": 21.587500831270056,
+      "energy": 6.908000266006419,
+      "selected": true
+    },
+    {
+      "id": 17,
+      "tasks": 4,
+      "time": 28.843741835674585,
+      "energy": 9.229997387415867,
+      "selected": true
+    },
+    {
+      "id": 18,
+      "tasks": 1,
+      "time": 13.789861495963224,
+      "energy": 4.4127556787082325,
+      "selected": true
+    },
+    {
+      "id": 19,
+      "tasks": 2,
+      "time": 20.672441076089882,
+      "energy": 6.615181144348762,
+      "selected": true
+    },
+    {
+      "id": 20,
+      "tasks": 2,
+      "time": 19.44259569858435,
+      "energy": 6.221630623546991,
+      "selected": true
+    },
+    {
+      "id": 21,
+      "tasks": 9,
+      "time": 62.03537558252915,
+      "energy": 19.851320186409325,
+      "selected": true
+    },
+    {
+      "id": 22,
+      "tasks": 1,
+      "time": 7.486687921615609,
+      "energy": 2.395740134916995,
+      "selected": true
+    },
+    {
+      "id": 23,
+      "tasks": 5,
+      "time": 39.29819884773926,
+      "energy": 12.57542363127656,
+      "selected": true
+    },
+    {
+      "id": 24,
+      "tasks": 1,
+      "time": 7.298224455579226,
+      "energy": 2.3354318257853524,
+      "selected": true
+    },
+    {
+      "id": 25,
+      "tasks": 154,
+      "time": 1184.398331773392,
+      "energy": 379.0074661674855,
+      "selected": true
+    },
+    {
+      "id": 26,
+      "tasks": 26,
+      "time": 186.46632554515165,
+      "energy": 59.66922417444853,
+      "selected": true
+    },
+    {
+      "id": 27,
+      "tasks": 310,
+      "time": 2425.0182588691446,
+      "energy": 776.0058428381263,
+      "selected": true
+    },
+    {
+      "id": 28,
+      "tasks": 6,
+      "time": 48.12623088916051,
+      "energy": 15.400393884531365,
+      "selected": true
+    },
+    {
+      "id": 29,
+      "tasks": 5,
+      "time": 36.72314668118878,
+      "energy": 11.751406937980413,
+      "selected": true
+    },
+    {
+      "id": 30,
+      "tasks": 4,
+      "time": 26.76323109476401,
+      "energy": 8.564233950324484,
+      "selected": true
+    },
+    {
+      "id": 31,
+      "tasks": 1,
+      "time": 13.459142386292708,
+      "energy": 4.306925563613667,
+      "selected": true
+    },
+    {
+      "id": 32,
+      "tasks": 3,
+      "time": 26.45323845807786,
+      "energy": 8.465036306584917,
+      "selected": true
+    },
+    {
+      "id": 33,
+      "tasks": 25,
+      "time": 181.2787002670109,
+      "energy": 58.00918408544349,
+      "selected": true
+    },
+    {
+      "id": 34,
+      "tasks": 2,
+      "time": 19.354404646788346,
+      "energy": 6.193409486972271,
+      "selected": true
+    },
+    {
+      "id": 35,
+      "tasks": 4,
+      "time": 32.37626600901983,
+      "energy": 10.360405122886345,
+      "selected": true
+    },
+    {
+      "id": 36,
+      "tasks": 19,
+      "time": 135.1998225327815,
+      "energy": 43.26394321049008,
+      "selected": true
+    },
+    {
+      "id": 37,
+      "tasks": 60,
+      "time": 452.703482574659,
+      "energy": 144.86511442389087,
+      "selected": true
+    },
+    {
+      "id": 38,
+      "tasks": 1,
+      "time": 12.836681903404756,
+      "energy": 4.107738209089522,
+      "selected": true
+    },
+    {
+      "id": 39,
+      "tasks": 1,
+      "time": 10.810794507326918,
+      "energy": 3.459454242344614,
+      "selected": true
+    },
+    {
+      "id": 40,
+      "tasks": 38,
+      "time": 283.18135665560027,
+      "energy": 90.6180341297921,
+      "selected": true
+    },
+    {
+      "id": 41,
+      "tasks": 2,
+      "time": 21.784064106341237,
+      "energy": 6.970900514029196,
+      "selected": true
+    },
+    {
+      "id": 42,
+      "tasks": 2,
+      "time": 22.346434144122032,
+      "energy": 7.150858926119051,
+      "selected": true
+    },
+    {
+      "id": 43,
+      "tasks": 3,
+      "time": 24.5231659190558,
+      "energy": 7.847413094097856,
+      "selected": true
+    },
+    {
+      "id": 44,
+      "tasks": 1,
+      "time": 8.091235442680064,
+      "energy": 2.589195341657621,
+      "selected": true
+    },
+    {
+      "id": 45,
+      "tasks": 2969,
+      "time": 24178.31968964207,
+      "energy": 7737.062300685466,
+      "selected": true
+    },
+    {
+      "id": 46,
+      "tasks": 1,
+      "time": 10.037074659550797,
+      "energy": 3.2118638910562556,
+      "selected": true
+    },
+    {
+      "id": 47,
+      "tasks": 1,
+      "time": 8.942150553770073,
+      "energy": 2.861488177206424,
+      "selected": true
+    },
+    {
+      "id": 48,
+      "tasks": 21,
+      "time": 153.0597011895808,
+      "energy": 48.979104380665866,
+      "selected": true
+    },
+    {
+      "id": 49,
+      "tasks": 1,
+      "time": 15.736624253167996,
+      "energy": 5.035719761013759,
+      "selected": true
+    },
+    {
+      "id": 50,
+      "tasks": 6,
+      "time": 47.96015662744081,
+      "energy": 15.34725012078106,
+      "selected": true
+    },
+    {
+      "id": 51,
+      "tasks": 13,
+      "time": 96.83307907200253,
+      "energy": 30.98658530304082,
+      "selected": true
+    },
+    {
+      "id": 52,
+      "tasks": 1,
+      "time": 14.870788904804645,
+      "energy": 4.758652449537486,
+      "selected": true
+    },
+    {
+      "id": 53,
+      "tasks": 2,
+      "time": 14.991156024735542,
+      "energy": 4.797169927915374,
+      "selected": true
+    },
+    {
+      "id": 54,
+      "tasks": 1,
+      "time": 10.196240476998145,
+      "energy": 3.2627969526394067,
+      "selected": true
+    },
+    {
+      "id": 55,
+      "tasks": 1,
+      "time": 13.310348187140512,
+      "energy": 4.259311419884964,
+      "selected": true
+    },
+    {
+      "id": 56,
+      "tasks": 2,
+      "time": 17.07404399693603,
+      "energy": 5.46369407901953,
+      "selected": true
+    },
+    {
+      "id": 57,
+      "tasks": 1,
+      "time": 12.520561670018152,
+      "energy": 4.006579734405809,
+      "selected": true
+    },
+    {
+      "id": 58,
+      "tasks": 17,
+      "time": 119.55088856867157,
+      "energy": 38.256284341974904,
+      "selected": true
+    },
+    {
+      "id": 59,
+      "tasks": 10,
+      "time": 74.46206492012124,
+      "energy": 23.827860774438797,
+      "selected": true
+    },
+    {
+      "id": 60,
+      "tasks": 4,
+      "time": 33.6780102864421,
+      "energy": 10.776963291661474,
+      "selected": true
+    },
+    {
+      "id": 61,
+      "tasks": 3,
+      "time": 26.77065076578715,
+      "energy": 8.566608245051889,
+      "selected": true
+    },
+    {
+      "id": 62,
+      "tasks": 1,
+      "time": 9.296794079168354,
+      "energy": 2.9749741053338727,
+      "selected": true
+    },
+    {
+      "id": 63,
+      "tasks": 2,
+      "time": 18.77303236742663,
+      "energy": 6.007370357576522,
+      "selected": true
+    },
+    {
+      "id": 64,
+      "tasks": 4,
+      "time": 28.420857192711907,
+      "energy": 9.09467430166781,
+      "selected": true
+    },
+    {
+      "id": 65,
+      "tasks": 1,
+      "time": 12.971338590019517,
+      "energy": 4.150828348806246,
+      "selected": true
+    },
+    {
+      "id": 66,
+      "tasks": 1,
+      "time": 9.53362144267014,
+      "energy": 3.0507588616544448,
+      "selected": true
+    },
+    {
+      "id": 67,
+      "tasks": 15,
+      "time": 112.47688720814261,
+      "energy": 35.99260390660564,
+      "selected": true
+    },
+    {
+      "id": 68,
+      "tasks": 2,
+      "time": 18.877157898882455,
+      "energy": 6.040690527642386,
+      "selected": true
+    },
+    {
+      "id": 69,
+      "tasks": 1,
+      "time": 13.381209494193715,
+      "energy": 4.281987038141989,
+      "selected": true
+    },
+    {
+      "id": 70,
+      "tasks": 7,
+      "time": 45.74988589049502,
+      "energy": 14.639963484958407,
+      "selected": true
+    },
+    {
+      "id": 71,
+      "tasks": 1,
+      "time": 13.130513860558786,
+      "energy": 4.201764435378812,
+      "selected": true
+    },
+    {
+      "id": 72,
+      "tasks": 28,
+      "time": 202.366184699356,
+      "energy": 64.75717910379392,
+      "selected": true
+    },
+    {
+      "id": 73,
+      "tasks": 1,
+      "time": 6.956778103323326,
+      "energy": 2.2261689930634643,
+      "selected": true
+    },
+    {
+      "id": 74,
+      "tasks": 1,
+      "time": 11.425002696113282,
+      "energy": 3.65600086275625,
+      "selected": true
+    },
+    {
+      "id": 75,
+      "tasks": 5,
+      "time": 38.62613586518799,
+      "energy": 12.360363476860158,
+      "selected": true
+    },
+    {
+      "id": 76,
+      "tasks": 8,
+      "time": 55.42887415197755,
+      "energy": 17.73723972863282,
+      "selected": true
+    },
+    {
+      "id": 77,
+      "tasks": 1,
+      "time": 11.120729638647532,
+      "energy": 3.558633484367211,
+      "selected": true
+    },
+    {
+      "id": 78,
+      "tasks": 333,
+      "time": 2608.9087014833035,
+      "energy": 834.850784474657,
+      "selected": true
+    },
+    {
+      "id": 79,
+      "tasks": 5,
+      "time": 41.93787335809728,
+      "energy": 13.420119474591129,
+      "selected": true
+    },
+    {
+      "id": 80,
+      "tasks": 51,
+      "time": 380.34847807997886,
+      "energy": 121.71151298559325,
+      "selected": true
+    },
+    {
+      "id": 81,
+      "tasks": 34,
+      "time": 250.72024249717882,
+      "energy": 80.23047759909723,
+      "selected": true
+    },
+    {
+      "id": 82,
+      "tasks": 128,
+      "time": 982.8864560438778,
+      "energy": 314.5236659340409,
+      "selected": true
+    },
+    {
+      "id": 83,
+      "tasks": 1,
+      "time": 14.671795269916034,
+      "energy": 4.69497448637313,
+      "selected": true
+    },
+    {
+      "id": 84,
+      "tasks": 2,
+      "time": 13.805288516377072,
+      "energy": 4.417692325240664,
+      "selected": true
+    },
+    {
+      "id": 85,
+      "tasks": 2,
+      "time": 14.55728080233228,
+      "energy": 4.65832985674633,
+      "selected": true
+    },
+    {
+      "id": 86,
+      "tasks": 1,
+      "time": 10.791312590001414,
+      "energy": 3.4532200288004526,
+      "selected": true
+    },
+    {
+      "id": 87,
+      "tasks": 2,
+      "time": 17.851951648976467,
+      "energy": 5.712624527672471,
+      "selected": true
+    },
+    {
+      "id": 88,
+      "tasks": 1,
+      "time": 11.227288154035527,
+      "energy": 3.59273220929137,
+      "selected": true
+    },
+    {
+      "id": 89,
+      "tasks": 3,
+      "time": 23.10798719160423,
+      "energy": 7.394555901313355,
+      "selected": true
+    },
+    {
+      "id": 90,
+      "tasks": 1,
+      "time": 12.311892702979453,
+      "energy": 3.9398056649534254,
+      "selected": true
+    },
+    {
+      "id": 91,
+      "tasks": 6,
+      "time": 44.39860891992158,
+      "energy": 14.20755485437491,
+      "selected": true
+    },
+    {
+      "id": 92,
+      "tasks": 3,
+      "time": 25.67176005101969,
+      "energy": 8.214963216326302,
+      "selected": true
+    },
+    {
+      "id": 93,
+      "tasks": 1,
+      "time": 9.44790963287885,
+      "energy": 3.0233310825212323,
+      "selected": true
+    },
+    {
+      "id": 94,
+      "tasks": 1,
+      "time": 14.884899400870978,
+      "energy": 4.763167808278714,
+      "selected": true
+    },
+    {
+      "id": 95,
+      "tasks": 48,
+      "time": 360.84577053142993,
+      "energy": 115.47064657005757,
+      "selected": true
+    },
+    {
+      "id": 96,
+      "tasks": 1,
+      "time": 11.504328773142069,
+      "energy": 3.6813852074054623,
+      "selected": true
+    },
+    {
+      "id": 97,
+      "tasks": 1,
+      "time": 14.399539314533778,
+      "energy": 4.607852580650809,
+      "selected": true
+    },
+    {
+      "id": 98,
+      "tasks": 1,
+      "time": 13.163353414381188,
+      "energy": 4.212273092601981,
+      "selected": true
+    },
+    {
+      "id": 99,
+      "tasks": 1,
+      "time": 13.712552285201077,
+      "energy": 4.388016731264344,
+      "selected": true
+    }
+  ],
+  "solver_objectives": {
+    "energy": 12787.259575970249,
+    "makespan": 24178.31968964207
+  },
+  "solver_status": "OPTIMAL",
+  "build_time_s": 1.4706193330021051,
+  "solve_time_s": 146.42927500499718,
+  "gurobi_runtime_s": 146.42914509773254,
+  "nodes": 2.0,
+  "num_binaries": 500000,
+  "num_constraints": 202
+}

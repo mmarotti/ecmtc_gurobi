@@ -3,6 +3,7 @@ import json
 import math
 import sys
 import time
+from pathlib import Path
 
 import gurobipy as gp
 
@@ -28,7 +29,24 @@ def read_instance(path: str) -> dict:
 # Modelo
 # ---------------------------------------------------------------------------
 
-def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False):
+def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, log_file=None):
+    # Criação do modelo e parâmetros (inclui a verificação da licença; fora do tempo de montagem)
+    m = gp.Model("ECMTC")
+    # log no console só com --verbose; no arquivo sempre que log_file for informado
+    m.Params.OutputFlag = 1 if (verbose or log_file) else 0
+    m.Params.LogToConsole = 1 if verbose else 0
+    if log_file:
+        m.Params.LogFile = str(log_file)
+    # resolver até o ótimo
+    m.Params.MIPGap = 0.0
+    m.Params.MIPGapAbs = 0.0
+    ######################
+    m.Params.TimeLimit = time_limit
+    if threads:
+        m.Params.Threads = threads
+
+    # Tempo de montagem: conjuntos, variáveis, restrições e objetivos
+    t_build = time.perf_counter()
     T, D = inst["T"], inst["D"]
     resources = inst["resources"]
 
@@ -37,14 +55,6 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False):
     A = {i: resources[i]["A"] for i in R}
     P = {(i, j): p for i in R for j, p in zip(A[i], resources[i]["P"])}
     E = {(i, j): e for i in R for j, e in zip(A[i], resources[i]["E"])}
-
-    m = gp.Model("ECMTC")
-    m.Params.OutputFlag = 1 if verbose else 0
-    m.Params.MIPGap = 0.0          # resolver até o ótimo
-    m.Params.MIPGapAbs = 0.0
-    m.Params.TimeLimit = time_limit
-    if threads:
-        m.Params.Threads = threads
 
     # Variáveis
     pairs = [(i, j) for i in R for j in A[i]]
@@ -60,8 +70,8 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False):
     # C_max >= sum_{j in A_i} P_i(j) y_ij, para todo i em R
     for i in R:
         m.addConstr(cmax >= gp.quicksum(P[i, j] * y[i, j] for j in A[i]), name=f"makespan_{i}")
-    # C_max <= D
-    m.addConstr(cmax <= D, name="deadline")
+    # C_max <= D (D = null: sem deadline)
+    m.addConstr(cmax <= (GRB.INFINITY if D is None else D), name="deadline")
 
     # lex min (sum_ij E_i(j) y_ij , C_max)
     # Objetivos hierárquicos: prioridade maior = otimizado primeiro.
@@ -72,11 +82,18 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False):
                     abstol=0.0, reltol=eps_rel, name="energy")
     m.setObjectiveN(cmax, index=1, priority=1, weight=1.0,
                     abstol=0.0, reltol=0.0, name="makespan")
+    m.update()  # aplica as alterações pendentes, para que não entrem no tempo do optimize
+    build_time = time.perf_counter() - t_build
 
-    t0 = time.perf_counter()
+    # Tempo de resolução
+    t_solve = time.perf_counter()
     m.optimize()
+    solve_time = time.perf_counter() - t_solve
     summary = {"solver_status": STATUS.get(m.Status, str(m.Status)),
-               "time_s": time.perf_counter() - t0, "nodes": m.NodeCount,
+               "build_time_s": build_time,        # montagem do modelo (Python + gurobipy)
+               "solve_time_s": solve_time,        # chamada ao optimize (relógio de parede)
+               "gurobi_runtime_s": m.Runtime,     # tempo reportado pelo próprio Gurobi
+               "nodes": m.NodeCount,
                "num_binaries": len(y), "num_constraints": m.NumConstrs}
     if m.Status != GRB.OPTIMAL:
         return {"status": "not_optimal", **summary}
@@ -89,7 +106,6 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False):
     # Solução: j com y_ij = 1 para cada recurso
     x = {i: j for (i, j), v in y.items() if round(v.X) == 1}
 
-    # objetivos recalculados a partir de P e E (independem de tolerâncias do solver)
     return {
         "status": "optimal",
         "total_energy": sum(E[i, x[i]] for i in R),
@@ -114,15 +130,21 @@ def main():
                     help="allowed relative degradation of the energy (default 1e-9)")
     ap.add_argument("--time-limit", type=float, default=3600, help="seconds")
     ap.add_argument("--threads", type=int, default=0)
-    ap.add_argument("-o", "--output", help="write the result to a JSON file")
+    ap.add_argument("-o", "--output",
+                    help="output directory (saves result.json and gurobi.log)")
     ap.add_argument("--verbose", action="store_true", help="show the Gurobi log")
     args = ap.parse_args()
 
     inst = read_instance(args.instance)
+    out_dir = None
+    if args.output:
+        out_dir = Path(args.output)
+        out_dir.mkdir(parents=True, exist_ok=True)
     res = solve_ecmtc(inst, eps_rel=args.eps, time_limit=args.time_limit,
-                      threads=args.threads, verbose=args.verbose)
+                      threads=args.threads, verbose=args.verbose,
+                      log_file=out_dir / "gurobi.log" if out_dir else None)
     res = {"instance": inst.get("name", args.instance), "T": inst["T"],
-           "D": None if math.isinf(inst["D"]) else inst["D"], **res}
+           "D": inst["D"], **res}
 
     print(f"Instance: {res['instance']}")
     print(f"T = {res['T']}, D = {res['D']}, status = {res['status']}")
@@ -131,13 +153,14 @@ def main():
               f"selected = {res['num_selected']}/{len(res['assignment'])}")
         for a in res["assignment"]:
             print(f"  resource {a['id']}: {a['tasks']} tasks (P = {a['time']:g}, E = {a['energy']:g})")
-        print(f"Time: {res['time_s']:.3f} s, {res['nodes']:.0f} nodes, "
-              f"{res['num_binaries']} binaries")
+        print(f"Build: {res['build_time_s']:.3f} s   Solve: {res['solve_time_s']:.3f} s "
+              f"(Gurobi runtime {res['gurobi_runtime_s']:.3f} s)   "
+              f"{res['nodes']:.0f} nodes, {res['num_binaries']} binaries")
 
-    if args.output:
-        with open(args.output, "w", encoding="utf-8") as f:
+    if out_dir:
+        with open(out_dir / "result.json", "w", encoding="utf-8") as f:
             json.dump(res, f, indent=2, ensure_ascii=False)
-        print(f"Result written to {args.output}")
+        print(f"Result and Gurobi log written to {out_dir}/ (result.json, gurobi.log)")
     return 0 if res["status"] == "optimal" else 1
 
 
