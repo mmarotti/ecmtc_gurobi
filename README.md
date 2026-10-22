@@ -43,7 +43,7 @@ e $C_{\max} \ge 0$.
 \text{lex min} \quad & \left( \sum_{i \in \mathcal{R}} \sum_{j \in A_i} E_{ij})\, y_{ij}\ ,\ \ C_{\max} \right) \\
 \text{s.a.} \quad & \sum_{j \in A_i} y_{ij} = 1 && \forall i \in \mathcal{R} \\
 & \sum_{i \in \mathcal{R}} \sum_{j \in A_i} j \, y_{ij} = T \\
-& C_{\max} \ge \sum_{j \in A_i} P_ij\, y_{ij} && \forall i \in \mathcal{R} \\
+& C_{\max} \ge \sum_{j \in A_i} P_{ij}\, y_{ij} && \forall i \in \mathcal{R} \\
 & C_{\max} \le D \\
 & y_{ij} \in \{0,1\} && \forall i \in \mathcal{R},\ j \in A_i \\
 & C_{\max} \ge 0
