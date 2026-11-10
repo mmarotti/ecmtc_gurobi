@@ -2,18 +2,14 @@ import argparse
 import json
 import sys
 import time
-from pathlib import Path
 
 import gurobipy as gp
 
+from pathlib import Path
 from gurobipy import GRB
 
 STATUS = {GRB.OPTIMAL: "OPTIMAL", GRB.INFEASIBLE: "INFEASIBLE",
           GRB.TIME_LIMIT: "TIME_LIMIT", GRB.INF_OR_UNBD: "INF_OR_UNBD"}
-
-# ---------------------------------------------------------------------------
-# Instância
-# ---------------------------------------------------------------------------
 
 def read_instance(path: str) -> dict:
     with open(path, encoding="utf-8") as f:
@@ -22,11 +18,6 @@ def read_instance(path: str) -> dict:
         if not (len(r["A"]) == len(r["P"]) == len(r["E"])):
             raise ValueError(f"resource {r['id']}: A, P and E must have the same length")
     return inst
-
-
-# ---------------------------------------------------------------------------
-# Modelo
-# ---------------------------------------------------------------------------
 
 def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, log_file=None):
     m = gp.Model("ECMTC")
@@ -67,19 +58,19 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, l
     # C_max >= sum_{j in A_i} P_i(j) y_ij, para todo i em R
     for i in R:
         m.addConstr(cmax >= gp.quicksum(P[i, j] * y[i, j] for j in A[i]), name=f"makespan_{i}")
-    # C_max <= D (D = null: sem deadline)
+    # C_max <= D (ou infinito se D for None)
     m.addConstr(cmax <= (GRB.INFINITY if D is None else D), name="deadline")
 
     # lex min (sum_ij E_i(j) y_ij , C_max)
-    # Objetivos hierárquicos: prioridade maior = otimizado primeiro.
-    # reltol/abstol = degradação permitida na energia ao otimizar o makespan (o eps).
+    # Objetivos hierárquicos: prioridade maior = otimizado primeiro
+    # reltol/abstol = degradação permitida na energia ao otimizar o makespan
     energy = gp.quicksum(E[i, j] * y[i, j] for i in R for j in A[i])
     m.ModelSense = GRB.MINIMIZE
     m.setObjectiveN(energy, index=0, priority=2, weight=1.0,
                     abstol=0.0, reltol=eps_rel, name="energy")
     m.setObjectiveN(cmax, index=1, priority=1, weight=1.0,
                     abstol=0.0, reltol=0.0, name="makespan")
-    m.update()  # aplica as alterações pendentes, para que não entrem no tempo do optimize
+    m.update()
     build_time = time.perf_counter() - t_build
 
     # Tempo de resolução
@@ -87,9 +78,9 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, l
     m.optimize()
     solve_time = time.perf_counter() - t_solve
     summary = {"solver_status": STATUS.get(m.Status, str(m.Status)),
-               "build_time_s": build_time,        # montagem do modelo (Python + gurobipy)
-               "solve_time_s": solve_time,        # chamada ao optimize (relógio de parede)
-               "gurobi_runtime_s": m.Runtime,     # tempo reportado pelo próprio Gurobi
+               "build_time_s": build_time,
+               "solve_time_s": solve_time,
+               "gurobi_runtime_s": m.Runtime,
                "nodes": m.NodeCount,
                "num_binaries": len(y), "num_constraints": m.NumConstrs}
     if m.Status != GRB.OPTIMAL:
@@ -114,11 +105,6 @@ def solve_ecmtc(inst, eps_rel=1e-9, time_limit=3600, threads=0, verbose=False, l
         "solver_objectives": solver_objectives,
         **summary,
     }
-
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 def main():
     ap = argparse.ArgumentParser(description="ECMTC as an integer program (gurobipy)")

@@ -2,8 +2,8 @@ import argparse
 import json
 import sys
 import time
-from pathlib import Path
 
+from pathlib import Path
 from numpy import array, full, inf, ndarray, zeros
 
 
@@ -66,10 +66,6 @@ def ecmtc(num_resources: int,
     return optimal_schedule, minimal_energy_consumption, minimal_makespan
 
 
-# ---------------------------------------------------------------------------
-# Instância: JSON -> parâmetros no formato da função original
-# ---------------------------------------------------------------------------
-
 def read_instance(path: str) -> dict:
     with open(path, encoding="utf-8") as f:
         inst = json.load(f)
@@ -87,11 +83,6 @@ def to_paper_format(inst: dict) -> tuple:
     energy_costs = array([r["E"] for r in resources], dtype=float)
     time_limit = inf if inst["D"] is None else float(inst["D"])
     return num_resources, inst["T"], assignment_capacities, time_costs, energy_costs, time_limit
-
-
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 def main():
     ap = argparse.ArgumentParser(description="ECMTC by dynamic programming (original algorithm)")
